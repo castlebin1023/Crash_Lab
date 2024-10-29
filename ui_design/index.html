@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Centering</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            /* 슬라이드 애니메이션을 위해 스크롤바 숨기기 */
+        }
+
+        .container {
+            display: flex;
+            width: 200%;
+            height: 100%;
+            transition: transform 1s ease-in-out;
+            /* 슬라이드 애니메이션 */
+        }
+
+        .section {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mic {
+            width: 214.667px;
+            height: 291.333px;
+            flex-shrink: 0;
+            display: inline-flex;
+            padding: 15.333px 61.333px 30.667px 41.017px;
+            align-items: center;
+            cursor: pointer;
+            /* 클릭 가능한 커서 추가 */
+        }
+
+        .back {
+            width: 214.667px;
+            height: 291.333px;
+            padding: 15.333px 61.333px;
+            align-items: center;
+            top: 50%;
+            left: 30%;
+            cursor: pointer;
+            /* 클릭 가능한 커서 추가 */
+
+
+        }
+
+        .navi {
+            width: 214.667px;
+            height: 291.333px;
+            align-items: center;
+            cursor: pointer;
+
+            top: 50%;
+            left: 50%;
+        }
+
+        .calendar {
+            width: 214.667px;
+            height: 291.333px;
+            align-items: center;
+            top: 50%;
+            right: 0%;
+            cursor: pointer;
+        }
+
+        .touch {
+            width: 265.65px;
+            height: 322px;
+            display: flex;
+            padding: 15.333px 61.333px 30.667px 41.017px;
+            align-items: center;
+            cursor: pointer;
+            /* 클릭 가능한 커서 추가 */
+        }
+
+        @media(max-width:700px) {
+            .title {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="section" id="section1">
+            <img src="icons/mic_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="mic"
+                onclick="navigateToNextSection()">
+            <img src="icons/touch_app_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="touch"
+                onclick="navigateToNextSection()">
+        </div>
+        <div class="section" id="section2">
+            <img src="icons/undo_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="back"
+                onclick="navigateToBackSection()">
+            <img src="icons/near_me_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="navi"
+                onclick="navigateToNavigation()">
+            <img src="icons/calendar_month_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="calendar"
+                onclick="navigateToCalander()">
+            
+                
+            
+
+        </div>
+    </div>
+
+    <script>
+        function navigateToNextSection() {
+            const container = document.getElementById('container');
+            container.style.transform = 'translateX(-50%)'; // 슬라이드 애니메이션 시작
+        }
+        function navigateToBackSection() {
+            const container = document.getElementById('container');
+            container.style.transform = 'translateX(0%)'; // 슬라이드 애니메이션 시작
+        }
+        function navigateToCalander() {
+            const container = document.getElementById('container')
+            container.style.transform = 'translateX(-50%) translateY(+70%)';
+            loadHtml('calender.html')
+        }
+        function navigateToNavigation() {
+            const container = document.getElementById('container');
+            container.style.transform = 'translateY(-70%)';
+            loadHTML('click.html');
+        }
+        function loadHTML(url) {
+            window.open(url, '_self');
+        }
+    </script>
+</body>
+
+</html>

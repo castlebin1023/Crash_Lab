@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>병원 환자 대기표</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .queue {
+            width: 300px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .queue-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .queue-item:last-child {
+            border-bottom: none;
+        }
+
+        .add-patient {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .add-patient input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .add-patient button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .add-patient button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>환자 대기표</h1>
+    <div class="queue" id="queue">
+        <!-- 대기 환자 목록이 여기에 표시됩니다 -->
+    </div>
+    <div class="add-patient">
+        <input type="text" id="patientName" placeholder="환자 이름">
+        <button onclick="addPatient()">추가</button>
+    </div>
+
+    <script>
+        const queue = document.getElementById('queue');
+
+        function addPatient() {
+            const patientName = document.getElementById('patientName').value;
+            if (patientName.trim() === '') {
+                alert('환자 이름을 입력하세요.');
+                return;
+            }
+
+            const queueItem = document.createElement('div');
+            queueItem.className = 'queue-item';
+            queueItem.innerHTML = `
+                <span>${patientName}</span>
+                <button onclick="removePatient(this)">삭제</button>
+            `;
+
+            queue.appendChild(queueItem);
+            document.getElementById('patientName').value = '';
+        }
+
+        function removePatient(button) {
+            const queueItem = button.parentElement;
+            queue.removeChild(queueItem);
+        }
+    </script>
+</body>
+</html>

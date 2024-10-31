@@ -1,7 +1,6 @@
 import speech_recognition as sr
 from gtts import gTTS
 import pygame
-
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>STT MODEL<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 def find_mic(): # Microphone(device_index=##)

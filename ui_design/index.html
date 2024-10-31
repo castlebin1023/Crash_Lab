@@ -26,59 +26,19 @@
             width: 50%;
             height: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
+            flex-wrap: wrap;
+            gap:5px;
         }
 
-        .mic {
-            width: 214.667px;
-            height: 291.333px;
-            flex-shrink: 0;
-            display: inline-flex;
-            padding: 15.333px 61.333px 30.667px 41.017px;
-            align-items: center;
-            cursor: pointer;
-            /* 클릭 가능한 커서 추가 */
-        }
-
-        .back {
-            width: 214.667px;
-            height: 291.333px;
-            padding: 15.333px 61.333px;
-            align-items: center;
-            top: 50%;
-            left: 30%;
-            cursor: pointer;
-            /* 클릭 가능한 커서 추가 */
-
-
-        }
-
-        .navi {
-            width: 214.667px;
-            height: 291.333px;
-            align-items: center;
-            cursor: pointer;
-
-            top: 50%;
-            left: 50%;
-        }
-
-        .calendar {
-            width: 214.667px;
-            height: 291.333px;
-            align-items: center;
-            top: 50%;
-            right: 0%;
-            cursor: pointer;
-        }
-
+        .mic,
+        .back,
+        .navi,
+        .calendar,
         .touch {
-            width: 265.65px;
-            height: 322px;
-            display: flex;
-            padding: 15.333px 61.333px 30.667px 41.017px;
-            align-items: center;
+            width: 214.667px;
+            height: 291.333px;
             cursor: pointer;
             /* 클릭 가능한 커서 추가 */
         }
@@ -94,22 +54,13 @@
 <body>
     <div class="container" id="container">
         <div class="section" id="section1">
-            <img src="icons/mic_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="mic"
-                onclick="navigateToNextSection()">
-            <img src="icons/touch_app_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="touch"
-                onclick="navigateToNextSection()">
+            <img src="icons/mic_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="mic" onclick="navigateToStt()">
+            <img src="icons/touch_app_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="touch" onclick="navigateToNextSection()">
         </div>
         <div class="section" id="section2">
-            <img src="icons/undo_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="back"
-                onclick="navigateToBackSection()">
-            <img src="icons/near_me_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="navi"
-                onclick="navigateToNavigation()">
-            <img src="icons/calendar_month_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="calendar"
-                onclick="navigateToCalander()">
-            
-                
-            
-
+            <img src="icons/undo_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="back" onclick="navigateToBackSection()">
+            <img src="icons/near_me_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="navi" onclick="navigateToNavigation()">
+            <img src="icons/calendar_month_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="calendar" onclick="navigateToCalander()">
         </div>
     </div>
 
@@ -123,14 +74,19 @@
             container.style.transform = 'translateX(0%)'; // 슬라이드 애니메이션 시작
         }
         function navigateToCalander() {
-            const container = document.getElementById('container')
-            container.style.transform = 'translateX(-50%) translateY(+70%)';
-            loadHtml('calender.html')
+            const container = document.getElementById('container');
+            container.style.transform = 'translateX(-150%)';
+            setTimeout(() => loadHTML('calender.html'), 1000); // 슬라이드 애니메이션 후 페이지 로드
         }
         function navigateToNavigation() {
             const container = document.getElementById('container');
-            container.style.transform = 'translateY(-70%)';
-            loadHTML('click.html');
+            container.style.transform = 'translateX(-50%) translateY(-70%)';
+            setTimeout(() => loadHTML('click.html'), 1000); // 슬라이드 애니메이션 후 페이지 로드
+        }
+        function navigateToStt() {
+            const container = document.getElementById('container');
+            container.style.transform = 'translateX(50%)';
+            setTimeout(() => loadHTML('stt.html'), 1000); // 슬라이드 애니메이션 후 페이지 로드
         }
         function loadHTML(url) {
             window.open(url, '_self');

@@ -1,6 +1,7 @@
 import speech_recognition as sr
 from gtts import gTTS
 import pygame
+
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>STT MODEL<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 def find_mic(): # Microphone(device_index=##)
@@ -120,11 +121,11 @@ class BackgroundSpeechRecognizer:
 
 def speak(text,use_lang):
     tts = gTTS(text,lang=use_lang)
-    tts.save("/home/castlebin/CrashLab/mp3_file/output.mps")
+    tts.save("/home/castlebin/code_ws/Crash_Lab/mp3_file/output.mps")
     pygame.mixer.init()
-    pygame.mixer.music.load("/home/castlebin/CrashLab/mp3_file/output.mps")
+    pygame.mixer.music.load("/home/castlebin/code_ws/Crash_Lab/mp3_file/output.mps")
     pygame.mixer.music.play()
 
     while pygame.mixer.music.get_busy():
         continue
-    return None
+    return None 

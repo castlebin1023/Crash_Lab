@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+
+            margin: 0;
+            padding: 0;
+            width: 1920px;
+            height: 1280px;
+            background: linear-gradient(to bottom, #2B6CB0, #2F855A);
+            /* 파란색에서 초록색으로 */
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid black;
+        }
+
+        .box {
+            position: absolute;
+            top: 0;
+            width: 1920px;
+            /* 박스의 가로 길이 */
+            height: 100px;
+            /* 박스의 세로 길이 */
+            /*background-color: #E3F2FD*/
+            /* 반투명 파란색 */
+            /*border-bottom: 1px solid black;*/
+        }
+
+        .spaced_image {
+
+            position: absolute;
+            margin-top: 350px;
+            filter: blur(2px);
+            filter: grayscale(50%) brightness(50%) contrast(90%);
+
+        }
+
+        .BigIconContainer {
+            display: flex;
+            margin-top: 150px;
+            justify-content: center;
+            align-items: center;
+            gap: 150px;
+        }
+
+        .icon-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+
+
+        }
+
+        .icon-wrapper img {
+            width: 72px;
+            height: 72px;
+
+        }
+
+        .icon-wrapper p {
+            color: #ffffff;
+            font-size: 16px;
+            margin-top: 5px;
+            font-weight: bold;
+            font-family: 'Noto Sans KR', sans-serif;
+
+        }
+
+        .icon-wrapper svg {
+            fill: #ffffff;
+            cursor: pointer;
+        }
+
+
+        .modal {
+            position: absolute;
+            display: none;
+
+            justify-content: center;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+
+            background-color: white;
+
+            /*background-color: rgba(0, 0, 0, 0.4);*/
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #2F855A;
+            color: white;
+            border: none;
+            border-radius: 5%;
+            cursor: pointer;
+        }
+
+        .SmallIconContainer {
+            position: absolute;
+            top: 20px;
+            /* 화면 상단에서 20px 아래 */
+            right: 20px;
+            /* 화면 오른쪽에서 20px 안쪽 */
+
+            /* 버튼 배경색 */
+            color: white;
+            /* 텍스트 색상 */
+
+        }
+
+        .SmallIconContainer .icon-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+            padding: 15px;
+            /* 버튼 크기 */
+            border-radius: 50%;
+            background-color: #4CAF50;
+        }
+
+        .SmallIconContainer p {
+         color: #ffffff;
+            font-size: 16px;
+            margin-top: 10px;
+            font-weight: bold;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="first box">
+            <img src="https://cdn.pixabay.com/photo/2015/09/09/09/46/building-931283_1280.jpg" width=1920px height=940px
+                class=spaced_image>
+        </div>
+
+
+
+
+
+        <div class="BigIconContainer">
+            <div class="icon-wrapper">
+                <svg id="intruduce" class="intruduce" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"
+                    width="72" height="72">
+                    <path
+                        d="M243.237,126.194H217.758V100.716a6,6,0,0,0-6-6H185.637a6,6,0,0,0-6,6v25.478H154.16a6,6,0,0,0-6,6v26.122a6,6,0,0,0,6,6h25.477v25.477a6,6,0,0,0,6,6h26.121a6,6,0,0,0,6-6V164.316h25.479a6,6,0,0,0,6-6V132.194A6,6,0,0,0,243.237,126.194Zm-6,26.122H211.758a6,6,0,0,0-6,6v25.477H191.637V158.316a6,6,0,0,0-6-6H160.16V138.194h25.477a6,6,0,0,0,6-6V106.716h14.121v25.478a6,6,0,0,0,6,6h25.479Z" />
+                    <path
+                        d="M380.706,115.936H292.851V79.506A17.211,17.211,0,0,0,306.873,62.62V53.313a17.211,17.211,0,0,0-17.191-17.192H110.318A17.212,17.212,0,0,0,93.126,53.313V62.62a17.212,17.212,0,0,0,14.023,16.886v36.43H19.293A19.317,19.317,0,0,0,0,135.23v2.056A19.308,19.308,0,0,0,16.407,156.34V357.879a6,6,0,0,0,6,6H375.17a6,6,0,0,0,6-6V156.556A19.3,19.3,0,0,0,400,137.286V135.23A19.316,19.316,0,0,0,380.706,115.936ZM369.17,315.48H292.851V303.14h48.237a6,6,0,0,0,6-6V270.022a6,6,0,0,0-6-6H292.851V256.9h48.237a6,6,0,0,0,6-6V223.781a6,6,0,0,0-6-6H292.851V210.66h48.237a6,6,0,0,0,6-6V177.541a6,6,0,0,0-6-6H292.851V156.58H369.17Zm-115.849,0V233.862a6,6,0,0,0-6-6H152.679a6,6,0,0,0-6,6V315.48h-27.53V79.811h161.7V315.48Zm-94.642,0V239.862H194V315.48ZM206,239.862h35.321V315.48H206ZM28.407,156.58h76.318v14.961H56.489a6,6,0,0,0-6,6V204.66a6,6,0,0,0,6,6h48.236v7.121H56.489a6,6,0,0,0-6,6V250.9a6,6,0,0,0,6,6h48.236v7.122H56.489a6,6,0,0,0-6,6V297.14a6,6,0,0,0,6,6h48.236v12.34H28.407Zm76.318,134.56H62.489V276.022h42.236Zm0-46.24H62.489V229.781h42.236Zm0-46.24H62.489V183.541h42.236Zm188.126-15.119h42.237V198.66H292.851Zm0,46.24h42.237V244.9H292.851Zm0,46.241h42.237V291.14H292.851ZM105.126,62.62V53.313a5.2,5.2,0,0,1,5.192-5.192H289.682a5.2,5.2,0,0,1,5.191,5.192V62.62a5.2,5.2,0,0,1-5.191,5.191H110.318A5.2,5.2,0,0,1,105.126,62.62ZM12,137.286V135.23a7.3,7.3,0,0,1,7.293-7.294h87.856V144.58H19.293A7.3,7.3,0,0,1,12,137.286ZM369.17,351.879H28.407v-24.4H369.17ZM388,137.286a7.3,7.3,0,0,1-7.294,7.294H292.851V127.936h87.855A7.3,7.3,0,0,1,388,135.23Z" />
+                </svg>
+                <p>병원소개</p>
+            </div>
+            <div class="icon-wrapper">
+                <svg id="location" class="location" clip-rule="evenodd" fill-rule="evenodd" height="72"
+                    stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" width="72"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g id="Icon">
+                        <path
+                            d="m12 1.25c-3.723 0-6.75 3.054-6.75 6.821 0 1.276.562 2.859 1.38 4.438 1.801 3.477 4.801 6.979 4.801 6.979.142.166.35.262.569.262s.427-.096.569-.262c0 0 3-3.502 4.801-6.979.818-1.579 1.38-3.162 1.38-4.438 0-3.767-3.027-6.821-6.75-6.821zm0 1.5c2.9 0 5.25 2.387 5.25 5.321 0 1.466-.93 3.376-2.004 5.157-1.152 1.91-2.5 3.664-3.246 4.592-.746-.928-2.094-2.682-3.246-4.592-1.074-1.781-2.004-3.691-2.004-5.157 0-2.934 2.35-5.321 5.25-5.321z" />
+                        <path
+                            d="m12 5.25c-1.518 0-2.75 1.232-2.75 2.75s1.232 2.75 2.75 2.75 2.75-1.232 2.75-2.75-1.232-2.75-2.75-2.75zm0 1.5c.69 0 1.25.56 1.25 1.25s-.56 1.25-1.25 1.25-1.25-.56-1.25-1.25.56-1.25 1.25-1.25z" />
+                        <path
+                            d="m16.784 17.377c.813.244 1.483.546 1.946.9.3.228.52.451.52.723 0 .16-.091.305-.219.45-.212.239-.527.454-.917.654-1.378.705-3.606 1.146-6.114 1.146s-4.736-.441-6.114-1.146c-.39-.2-.705-.415-.917-.654-.128-.145-.219-.29-.219-.45 0-.272.22-.495.52-.723.463-.354 1.133-.656 1.946-.9.396-.119.621-.538.502-.934-.119-.397-.538-.622-.934-.503-1.238.373-2.2.884-2.778 1.449-.508.495-.756 1.049-.756 1.611 0 .702.397 1.402 1.204 1.986 1.416 1.024 4.26 1.764 7.546 1.764s6.13-.74 7.546-1.764c.807-.584 1.204-1.284 1.204-1.986 0-.562-.248-1.116-.756-1.611-.578-.565-1.54-1.076-2.778-1.449-.396-.119-.815.106-.934.503-.119.396.106.815.502.934z" />
+                    </g>
+                </svg>
+
+                <p>위치안내</p>
+            </div>
+
+
+            <div class="icon-wrapper">
+                <svg id="camera" class="camera" enable-background="new 0 0 512 512" height="72" viewBox="0 0 512 512"
+                    width="72" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path
+                            d="m256 168.9c-62.555 0-113.447 50.893-113.447 113.447s50.892 113.447 113.447 113.447 113.447-50.892 113.447-113.446-50.892-113.448-113.447-113.448zm0 186.894c-40.499 0-73.447-32.948-73.447-73.446 0-40.499 32.948-73.447 73.447-73.447s73.447 32.948 73.447 73.447c0 40.498-32.948 73.446-73.447 73.446z" />
+                        <path
+                            d="m393.766 161.326c-11.046 0-20 8.954-20 20s8.954 20 20 20h11.489c11.046 0 20-8.954 20-20s-8.954-20-20-20z" />
+                        <path
+                            d="m492 324.213c11.046 0 20-8.954 20-20v-144.512c0-44.112-35.888-80-80-80h-46.62l-22.972-40.822c-3.543-6.296-10.206-10.191-17.43-10.191h-177.957c-7.224 0-13.887 3.896-17.43 10.191l-22.971 40.822h-46.62c-44.112 0-80 35.888-80 80v243.611c0 44.112 35.888 80 80 80h352c44.112 0 80-35.888 80-80.1 0-11.046-8.954-19.95-20-19.95s-20 9.004-20 20.05c0 22.056-17.944 40-40 40h-352c-22.056 0-40-17.944-40-40v-243.611c0-22.056 17.944-40 40-40h58.314c7.224 0 13.887-3.896 17.43-10.191l22.972-40.822h154.568l22.972 40.822c3.543 6.296 10.206 10.191 17.43 10.191h58.314c22.056 0 40 17.944 40 40v144.512c0 11.046 8.954 20 20 20z" />
+                    </g>
+                </svg>
+                <p>카메라</p>
+            </div>
+        </div>
+        <div class="SmallIconContainer">
+            <div class="icon-wrapper">
+                <svg class="voice" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                    width="24px" fill="#5f6368">
+                    <path
+                        d="M480-400q-50 0-85-35t-35-85v-240q0-50 35-85t85-35q50 0 85 35t35 85v240q0 50-35 85t-85 35Zm0-240Zm-40 520v-123q-104-14-172-93t-68-184h80q0 83 58.5 141.5T480-320q83 0 141.5-58.5T680-520h80q0 105-68 184t-172 93v123h-80Zm40-360q17 0 28.5-11.5T520-520v-240q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760v240q0 17 11.5 28.5T480-480Z" />
+
+                </svg>
+
+
+
+            </div>
+            <p>음성인식</p>
+        </div>
+
+        <div class="modal">
+            <div class="modal-content"></div>
+            <button class="close-modal">Close</button>
+
+        </div>
+    </div>
+
+
+    <script>
+        // SVG 요소 선택
+        /*
+        const svgElement = document.getElementById("intruduce");
+        const svgElement2 = document.getElementById("location");
+        const svgElement3 = document.getElementById("camera");
+        // 클릭 이벤트 추가
+        svgElement.addEventListener("click", function () {
+            alert("SVG가 클릭되었습니다!");
+        });
+        svgElement2.addEventListener("click", function () {
+            alert("SVG가 클릭되었습니다!");
+        });
+        svgElement3.addEventListener("click", function () {
+            alert("SVG가 클릭되었습니다!");
+        });
+        */
+        /*모달 부분 함수들 */
+
+        // 모달 창 요소
+        const modal = document.querySelector('.modal');
+        const modalContent = document.querySelector('.modal-content');
+        // 여러 SVG 요소를 NodeList로 선택
+        const svgElements = document.querySelectorAll('.intruduce, .location, .camera, .voice');
+        const closeModal = document.querySelector('.close-modal');
+        // 각 요소에 클릭 이벤트 추가
+        svgElements.forEach((svgElement) => {
+            svgElement.addEventListener("click", () => {
+                if (svgElement.classList.contains('intruduce')) {
+                    console.log("Intruduce 버튼 클릭");
+                    modal.style.display = "flex"; // Intruduce 클릭 시 모달 표시
+                    modalContent.innerHTML = "<h2>Introduce</h2><p>Content for Introduce</p> <a href='https://www.naver.com'>네이버</a>";
+
+                } else if (svgElement.classList.contains('location')) {
+                    console.log("Location 버튼 클릭");
+                    modal.style.display = "flex";
+                    modalContent.innerHTML = "<h2>Introduce</h2><p>Content for Introduce</p>";
+                    // Location 클릭 시 동작 추가
+                } else if (svgElement.classList.contains('camera')) {
+                    modal.style.display = "flex";
+                    console.log("Camera 버튼 클릭");
+                    // Camera 클릭 시 동작 추가
+                }else if (svgElement.classList.contains('voice')) {
+                    modal.style.display = "flex";
+                    console.log("Voice 버튼 클릭");
+                    // Camera 클릭 시 동작 추가
+                }
+
+            });
+        });
+        closeModal.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+        
+
+
+
+
+
+    </script>
+</body>
+
+</html>

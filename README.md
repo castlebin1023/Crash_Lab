@@ -15,3 +15,38 @@ https://platform.openai.com/api-keys<br/>
 "https://pypi.org/project/gTTS/"<br/>
 #### Play MP3<br/>
 "https://www.jbmpa.com/pygame/10"<br/>
+
+speech_recognition: 음성 인식을 위한 라이브러리 
+pip install SpeechRecognition
+
+pygame: 오디오 재생 및 관련 기능을 제공하는 라이브러리
+pip install pygame
+
+sounddevice: 오디오 녹음을 위한 라이브러리
+pip install sounddevice
+
+wave: Python 표준 라이브러리로 별도 설치가 필요 없음
+
+usb_4_mic_array: ReSpeaker USB Mic Array 조정을 위한 라이브러리
+
+
+pip install usb_4_mic_array
+pixel_ring: ReSpeaker Pixel Ring 제어를 위한 라이브러리
+pip install pixel-ring
+atexit: Python 표준 라이브러리로 별도 설치가 필요 없음
+
+gTTS: 텍스트를 음성으로 변환하는 라이브러리
+
+bash
+코드 복사
+pip install gTTS
+openai: OpenAI GPT API를 사용하기 위한 라이브러리
+
+bash
+코드 복사
+pip install openai
+pyusb: USB 장치 제어를 위한 라이브러리
+
+bash
+코드 복사
+pip install pyusb

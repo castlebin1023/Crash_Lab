@@ -1,0 +1,9 @@
+SpeechRecognition
+pyaudio
+gtts
+pygame
+sounddevice
+pixel_ring
+openai
+dotenv-python
+tostring
